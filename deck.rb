@@ -15,7 +15,7 @@ class Deck
 				cards << Card.new(suit, facecard)	
 			end
 		end
-		cards
+		cards.shuffle
 	end
 
 end

@@ -4,6 +4,8 @@ require 'minitest/autorun'
 
 require './card'
 require './deck'
+require './game'
+require './hand'
 
 class BlackjackTest < MiniTest::Test
 end
@@ -53,4 +55,20 @@ class TestDeck < MiniTest::Test
 	def test_deck_has_52_cards_in_new_deck
 		assert Deck.new.cards.length == 52
 	end
+end
+
+class TestGame < MiniTest::Test
+
+	def test_should_have_player_hand
+		assert Game.new.player_hand.cards.length == 2
+	end
+
+	def test_should_have_dealer_hand
+		assert Game.new.dealer_hand.cards.length == 2
+	end
+
+	def test_should_have_status
+		refute_nil Game.new.status
+	end
+
 end
