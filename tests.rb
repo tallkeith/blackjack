@@ -3,7 +3,7 @@ require 'minitest/autorun'
 
 
 require './card'
-
+require './deck'
 
 class BlackjackTest < MiniTest::Test
 end
@@ -45,3 +45,12 @@ class TestCard < MiniTest::Test
 
 end
 
+class TestDeck < MiniTest::Test
+	def test_deck_builds_52_cards
+		assert Deck.build_cards.length == 52
+	end
+
+	def test_deck_has_52_cards_in_new_deck
+		assert Deck.new.cards.length == 52
+	end
+end
