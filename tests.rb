@@ -72,3 +72,18 @@ class TestGame < MiniTest::Test
 	end
 
 end
+
+class TestHand < MiniTest::Test
+
+	def test_calculate_value_correctly
+		# deck = Minitest::Mock.new
+
+		# deck = @mock.expect(:deck, :cards =>[Card.new(:clubs, 5), Card.new(:diamonds, 10)])
+		# deck = 
+		hand = Hand.new
+
+		# 2.times { hand.hit!(deck) }
+		@cards = ["5-clubs", "10-diamonds"]
+		assert hand.value == 15
+	end
+end

@@ -11,10 +11,7 @@ class Hand
 	end
 
 	def value
-		value = 0
-		@cards.each do |card|
-			value += card.value
-		end
+		cards.inject(0) { |sum, card| sum += card.value }
 	end
 
 end
